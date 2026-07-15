@@ -57,7 +57,7 @@ textarea { width: 100%; border: 1px solid var(--border); border-radius: 8px; pad
 textarea:focus { border-color: var(--primary); }
 
 /* Button */
-button { width: 100%; padding: 18px; background: linear-gradient(135deg, var(--primary), #6366f1); color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3); transition: transform 0.2s, box-shadow 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px; }
+button { width: 19%;background: linear-gradient(135deg, var(--primary), #6366f1); padding: 12px; color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3); transition: transform 0.2s, box-shadow 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px; }
 button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4); }
 button:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 .kw-item { 
@@ -89,6 +89,24 @@ button:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
     background: #4338ca;
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
+}
+/* Styling tombol close biar muncul dan gak 'ngumpet' */
+.close-btn {
+    background: transparent !important;
+    border: none !important;
+    font-size: 24px !important;
+    color: #333 !important; /* Warna ikon X */
+    cursor: pointer !important;
+    padding: 5px 10px !important;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 1000;
+}
+
+/* Biar ikonnya ganti warna pas disentuh mouse */
+.close-btn:hover {
+    color: #ff4d4d !important;
 }
 /* Loading */
 .hidden { display: none !important; }
@@ -162,7 +180,7 @@ ul { margin: 0; padding-left: 20px; line-height: 1.8; }
     border: none; 
     font-size: 18px; 
     cursor: pointer; 
-    color: var(#64748b);
+    color: var(#d31a1a);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,7 +189,7 @@ ul { margin: 0; padding-left: 20px; line-height: 1.8; }
     transition: all 0.2s ease; 
     opacity: 0.7; 
 }
-.close-btn:hover { opacity: 1; }
+.close-btn:hover { opacity: 15; }
 .modal-body p { line-height: 1.6; font-size: 15px; color: var(--text-color); }
 .modal-footer { margin-top: 20px; text-align: right; }
 .btn-copy { 
@@ -180,3 +198,31 @@ ul { margin: 0; padding-left: 20px; line-height: 1.8; }
     font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;
 }
 .btn-copy:hover { background: #4338ca; }
+/* Styling untuk Modal AI Draft biar bisa di-scroll */
+.modal-content { /* Sesuaikan ID ini dengan ID div modal lu di index.html */
+    max-height: 80vh;    /* Modal maksimal 80% tinggi layar */
+    overflow-y: auto;    /* Ini fitur scroll-nya */
+    padding: 20px;
+    background-color: white; /* Pastikan background-nya solid */
+    border-radius: 8px;
+}
+
+/* Biar teks di dalemnya juga rapi */
+.draftText {
+    word-wrap: break-word; /* Biar kata-kata panjang gak keluar jalur */
+    margin-bottom: 20px;
+}
+/* Container khusus buat nengahkan tombol */
+.button-container {
+    display: flex;          /* Biar tombol sebelahan */
+    justify-content: center; /* Posisi ke tengah horizontal */
+    gap: 20px;               /* Jarak antar tombol */
+    margin: 30px 0;          /* Jarak atas-bawah */
+    width: 100%;             /* Penuhin lebar */
+}
+
+/* Biar tombolnya gak terlalu lebar/sempit, sesuaikan ukuran */
+.button-container button {
+    width: 250px; /* Lebar tombol fix biar seragam */
+    flex: none;   /* Biar gak melar-melar */
+}

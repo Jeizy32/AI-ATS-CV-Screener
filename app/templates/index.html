@@ -41,9 +41,18 @@
             </div>
         </div>
 
-        <button id="analyzeBtn" onclick="analyzeCV()">
-            <i class="fas fa-bolt"></i> Analisis CV Sekarang
-        </button>
+            <!-- Ganti bagian tombol lu jadi kayak gini -->
+        <div class="button-container">
+            <button id="analyzeBtn" onclick="analyzeCV()">
+                <i class="fas fa-bolt"></i> Analisis CV Sekarang
+            </button>
+
+            <!-- Tombol ke-2: gua tambahin class="btn-cover" biar rapi, 
+                tapi warna ijonya tetap gua kasih inline style biar gak ilang -->
+            <button class="btn-cover" onclick="getCoverLetter()" style="background: #28a745;">
+                <i class="fas fa-envelope"></i> Buat Cover Letter
+            </button>
+        </div>
         
         <div id="loading" class="hidden">
             <div class="spinner"></div>
@@ -280,4 +289,27 @@
                 document.getElementById('draftText').innerText = "Terjadi kesalahan jaringan.";
             }
         }
+        async function getCoverLetter() {
+            const fileInput = document.getElementById('cvFile');
+            const jdText = document.getElementById('jdText').value;
+    
+    if (!fileInput.files[0]) { alert("Upload CV dulu ya, Bro!"); return; }
+
+            const formData = new FormData();
+        formData.append('cv_file', fileInput.files[0]);
+        formData.append('jd_text', jdText);
+
+    // Reuse modal/UI yang sudah ada
+        document.getElementById('draftText').innerHTML = 'AI sedang menulis surat lamaran...';
+        openModal(); // Pastikan fungsi openModal() lu udah ada
+
+            const res = await fetch('/generate-cover-letter', { method: 'POST', body: formData });
+        const data = await res.json();
+    
+    if (data.cover_letter) {
+        document.getElementById('draftText').innerText = data.cover_letter;
+    } else {
+        alert(data.error);
+    }
+}
     </script>

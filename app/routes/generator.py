@@ -12,7 +12,6 @@ def generate_bullet():
     keyword = data.get('keyword', '')
     job_title = data.get('job_title', '')
     
-    # Tambahin instruksi caps lock biar AI-nya nurut
     prompt = f"""Tuliskan 1 kalimat bullet point resume yang profesional, ATS-friendly, dan berdampak untuk melamar posisi '{job_title}'. 
     Kalimat ini harus menonjolkan keahlian dalam hal '{keyword}'. 
     Gunakan action verb di awal kalimat dan bahasa Indonesia yang formal.
@@ -23,8 +22,7 @@ def generate_bullet():
     DILARANG menggunakan simbol bullet atau tanda kutip."""
     
     hasil_teks = None
-    
-    # --- PERBAIKAN: Posisi indentasi disesuaikan ---
+
     for key in KUMPULAN_API_KEYS:
         try:
             genai.configure(api_key=key)  
@@ -39,7 +37,6 @@ def generate_bullet():
             print(f"❌ [Draft AI] Key berakhiran ...{key[-4:]} limit/error: {e}. Mencoba key berikutnya...")
             continue
             
-    # Harus sejajar dengan FOR, agar dipanggil setelah loop selesai
     if hasil_teks:
         return jsonify({"bullet": hasil_teks})
     else:
@@ -47,15 +44,15 @@ def generate_bullet():
 
 @generator_bp.route('/generate-cover-letter', methods=['POST'])
 def generate_cover_letter():
-    # 1. Ambil file CV dan teks JD
+    # Ambil file CV dan teks JD
     if 'cv_file' not in request.files or 'jd_text' not in request.form:
         return jsonify({"error": "Data tidak lengkap"}), 400
     
     file = request.files['cv_file']
     jd_text = request.form['jd_text']
-    cv_text = extract_text_from_pdf(file) # Pakai fungsi yang udah ada!
+    cv_text = extract_text_from_pdf(file) 
     
-    # 2. Prompt untuk Cover Letter
+    # Prompt untuk Cover Letter
     prompt = f"""
     Buatkan surat lamaran kerja (Cover Letter) yang profesional, persuasif, dan ATS-friendly berdasarkan data berikut:
     CV Kandidat: {cv_text}
@@ -71,7 +68,7 @@ def generate_cover_letter():
 
     hasil_surat = None
     
-    # 3. Looping API Key (Sama seperti fitur sebelumnya)
+    # Looping API Key
     for key in KUMPULAN_API_KEYS:
         try:
             genai.configure(api_key=key)
@@ -88,4 +85,3 @@ def generate_cover_letter():
         return jsonify({"cover_letter": hasil_surat})
     else:
         return jsonify({"cover_letter": "Maaf, semua kuota AI sedang sibuk. Coba lagi nanti."}), 500
-    pass

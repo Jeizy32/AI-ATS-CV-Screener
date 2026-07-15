@@ -41,14 +41,11 @@
             </div>
         </div>
 
-            <!-- Ganti bagian tombol lu jadi kayak gini -->
         <div class="button-container">
             <button id="analyzeBtn" onclick="analyzeCV()">
                 <i class="fas fa-bolt"></i> Analisis CV Sekarang
             </button>
 
-            <!-- Tombol ke-2: gua tambahin class="btn-cover" biar rapi, 
-                tapi warna ijonya tetap gua kasih inline style biar gak ilang -->
             <button class="btn-cover" onclick="getCoverLetter()" style="background: #28a745;">
                 <i class="fas fa-envelope"></i> Buat Cover Letter
             </button>
@@ -63,14 +60,14 @@
             <hr>
             
             <div class="dashboard-grid">
-                <!-- Main Score -->
+                //Main Score//
                 <div class="score-card glass-panel">
                     <h3>Skor Kecocokan</h3>
                     <h1 id="scoreValue">0%</h1>
                     <div class="progress-bar"><div id="progressFill" class="fill"></div></div>
                 </div>
 
-                <!-- Radar Chart -->
+                //Radar Chart//
                 <div class="chart-card glass-panel">
                     <canvas id="radarChart"></canvas>
                 </div>
@@ -99,9 +96,7 @@
         </div>
     </div>
 
-<!-- ========================================== -->
-    <!-- 1. KODE MODAL HTML (PASTIKAN DI LUAR SCRIPT) -->
-    <!-- ========================================== -->
+    //KODE MODAL HTML//
     <div id="aiModal" class="modal-overlay hidden">
         <div class="modal-content glass-panel">
             <div class="modal-header">
@@ -117,9 +112,6 @@
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- 2. KODE JAVASCRIPT DIMULAI DI SINI -->
-    <!-- ========================================== -->
     <script>
         let radarChartInstance = null;
 
@@ -301,7 +293,7 @@
 
     // Reuse modal/UI yang sudah ada
         document.getElementById('draftText').innerHTML = 'AI sedang menulis surat lamaran...';
-        openModal(); // Pastikan fungsi openModal() lu udah ada
+        openModal();
 
             const res = await fetch('/generate-cover-letter', { method: 'POST', body: formData });
         const data = await res.json();

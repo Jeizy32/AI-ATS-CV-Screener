@@ -1,6 +1,6 @@
-# CV ATS Screener
+# ATS Resume AI Screener
 
-**CV ATS Screener** adalah aplikasi berbasis web yang dirancang untuk membantu pengguna menganalisis dan mengukur tingkat kesesuaian Curriculum Vitae (CV) mereka terhadap standar *Applicant Tracking System* (ATS) yang sering digunakan oleh HRD.
+**ATS Resume AI Screener** adalah aplikasi berbasis web yang dirancang untuk membantu pengguna menganalisis dan mengukur tingkat kesesuaian Curriculum Vitae (CV) mereka terhadap standar *Applicant Tracking System* (ATS) yang sering digunakan oleh HRD.
 
 ## Tampilan Antarmuka
 <img width="459" height="243" alt="Image" src="https://github.com/user-attachments/assets/9baf48d5-8ae4-4638-8da6-2e5003622a50" />

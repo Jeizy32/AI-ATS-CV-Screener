@@ -20,8 +20,12 @@
     </div>
 
     <div class="container">
-        <header>
-            <div class="logo-icon"><i class="fas fa-robot"></i></div>
+<header>
+    <div class="logo-wrapper">
+        <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 256 256">
+            <path d="M185.68,104.28q-1.4-2.88-3.06-5.6a60,60,0,0,0-26.92-78,8,8,0,0,0-7.4,14.19A44,44,0,0,1,170.72,84.4a63.85,63.85,0,0,0-85.46,0A44,44,0,0,1,107.7,34.87a8,8,0,1,0-7.4-14.19,60,60,0,0,0-26.93,78,62.59,62.59,0,0,0-3.05,5.58A60.07,60.07,0,0,0,16,164a8,8,0,0,0,16,0,44.09,44.09,0,0,1,32.89-42.58A63.94,63.94,0,0,0,109,193.11a44,44,0,0,1-56.65,8,8,8,0,1,0-8.62,13.47A60,60,0,0,0,126.74,196l1.26,0,1.26,0a60,60,0,0,0,83.05,18.59,8,8,0,1,0-8.62-13.47,44,44,0,0,1-56.65-8,63.94,63.94,0,0,0,44.07-71.69A44.09,44.09,0,0,1,224,164a8,8,0,0,0,16,0A60.07,60.07,0,0,0,185.68,104.28ZM128,84a47.91,47.91,0,0,1,35.56,15.79,44,44,0,0,1-71.13,0A47.89,47.89,0,0,1,128,84Zm.12,49.92-.12.2-.12-.2h.24ZM80,132a47.6,47.6,0,0,1,1.44-11.65,44,44,0,0,1,36,58.46A48.07,48.07,0,0,1,80,132Zm58.57,46.81a44,44,0,0,1,36-58.46,48,48,0,0,1-36,58.46Z"></path>
+        </svg>
+    </div>
             <h1>ATS Resume AI Screener</h1>
             <p>Tingkatkan peluang lolos seleksi dengan analisis CV berbasis Artificial Intelligence.</p>
         </header>
@@ -35,10 +39,16 @@
                 <span id="fileName" class="file-name"></span>
             </div>
             
-            <div class="card jd-area">
-                <h3><i class="fas fa-briefcase"></i> Job Description</h3>
-                <textarea id="jdText" rows="6" placeholder="Paste deskripsi pekerjaan di sini..."></textarea>
+        <div class="card jd-area">
+            <h3><i class="fas fa-briefcase"></i> Job Description</h3>
+            
+            <div class="jd-templates">
+                <span class="jd-badge" onclick="fillJD('admin')"><i class="fas fa-clipboard-list"></i> Admin / Data Entry</span>
+                <span class="jd-badge" onclick="fillJD('it')"><i class="fas fa-laptop-code"></i> IT Support</span>
+                <span class="jd-badge" onclick="fillJD('cs')"><i class="fas fa-headset"></i> Pelayanan / CS</span>
             </div>
+
+            <textarea id="jdText" rows="6" placeholder="Paste deskripsi pekerjaan di sini..."></textarea>
         </div>
 
         <div class="button-container">
@@ -60,14 +70,11 @@
             <hr>
             
             <div class="dashboard-grid">
-                //Main Score//
                 <div class="score-card glass-panel">
                     <h3>Skor Kecocokan</h3>
                     <h1 id="scoreValue">0%</h1>
                     <div class="progress-bar"><div id="progressFill" class="fill"></div></div>
                 </div>
-
-                //Radar Chart//
                 <div class="chart-card glass-panel">
                     <canvas id="radarChart"></canvas>
                 </div>
@@ -96,7 +103,6 @@
         </div>
     </div>
 
-    //KODE MODAL HTML//
     <div id="aiModal" class="modal-overlay hidden">
         <div class="modal-content glass-panel">
             <div class="modal-header">
@@ -303,5 +309,26 @@
     } else {
         alert(data.error);
     }
+}
+function fillJD(role) {
+    const jdInput = document.getElementById('jdText');
+    
+    const templates = {
+        admin: `Dibutuhkan staf Admin/Data Entry yang teliti dan disiplin. Tanggung jawab: melakukan entry data dengan akurat, menyusun jadwal kegiatan, manajemen arsip, dan berkoordinasi dengan tim lapangan. Kualifikasi: menguasai Microsoft Office (Word, Excel), memiliki ketertiban administrasi, serta mampu bekerja sama dalam tim.`,
+        
+        it: `Dicari IT Staff/Informatika. Tugas utama: memberikan dukungan teknis komputer, mengelola sistem informasi, input data base, dan troubleshooting jaringan dasar. Syarat: Lulusan Teknik Informatika, memahami dasar perangkat keras/lunak, adaptif terhadap teknologi baru, dan berorientasi pada hasil.`,
+        
+        cs: `Dibutuhkan Customer Service / Staf Pelayanan Masyarakat. Tugas: memberikan pelayanan prima kepada masyarakat, melakukan wawancara/pengumpulan data, dan komunikasi publik. Kualifikasi: memiliki public speaking yang baik, komunikatif, mampu bekerja di lingkungan dinamis, serta memiliki sertifikasi emotional intelligence menjadi nilai tambah.`
+    };
+
+    jdInput.value = templates[role];
+    
+    jdInput.style.borderColor = "var(--primary)";
+    jdInput.style.backgroundColor = "rgba(99, 102, 241, 0.02)";
+    
+    setTimeout(() => {
+        jdInput.style.borderColor = "var(--border)";
+        jdInput.style.backgroundColor = "transparent";
+    }, 500);
 }
     </script>

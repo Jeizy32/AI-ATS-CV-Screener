@@ -254,3 +254,54 @@ ul { margin: 0; padding-left: 20px; line-height: 1.8; }
     box-shadow: var(--glass-shadow); 
     min-width: 300px; 
 }
+
+.logo-minimal {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-wrapper {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-svg {
+    fill: var(--primary); 
+    width: 64px;
+    height: 64px;
+    transition: transform 0.3s ease;
+}
+
+.logo-svg:hover {
+    transform: scale(1.1) rotate(5deg); 
+}
+.jd-templates {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.jd-badge {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.jd-badge:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}

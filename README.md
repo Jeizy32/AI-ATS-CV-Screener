@@ -29,7 +29,7 @@ Bagi yang ingin mencoba menjalankan aplikasi ini di environment lokal, ikuti lan
    git clone [https://github.com/Jeizy32/AI-ATS-CV-Screener](https://github.com/Jeizy32/AI-ATS-CV-Screener)
 
 2. Masuk ke direktori proyek:
-    cd cv-ats-screener
+    cd AI-ATS-CV-Screener
 
 3.  Install semua depencies:
     pip install -r requirements.txt

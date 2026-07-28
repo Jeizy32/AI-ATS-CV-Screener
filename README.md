@@ -5,10 +5,10 @@ ATS Resume AI Screener adalah aplikasi web berbasis *Artificial Intelligence* ya
 
 ## Tampilan Antarmuka
 ![Tampilan Web ATS Resume AI Screener]
-<img width="459" height="243" alt="Image" src="https://github.com/user-attachments/assets/4eb986a4-bc73-42c3-a5b0-6dbb38f967ae" />
-<img width="1333" height="386" alt="Image" src="https://github.com/user-attachments/assets/e08ec46a-06b6-4edf-8255-85fcf53a5829" />
-<img width="1327" height="607" alt="Image" src="https://github.com/user-attachments/assets/a1a1e62f-a5e6-4dea-a309-546c8df30751" />
-<img width="1366" height="619" alt="Image" src="https://github.com/user-attachments/assets/3a606102-d1ca-4133-a652-ecbb67de16d8" />
+<img width="459" height="243" alt="Image" src="https://github.com/user-attachments/assets/ec4a87a3-8a23-473c-9ad0-17d29644feac" />
+<img width="1333" height="386" alt="Image" src="https://github.com/user-attachments/assets/b5e721d5-889a-4fe4-9130-256bd1ac0fc9" />
+<img width="1327" height="607" alt="Image" src="https://github.com/user-attachments/assets/d77e43e8-6ec1-4c15-90e4-a606e94f8542" />
+<img width="1366" height="619" alt="Image" src="https://github.com/user-attachments/assets/6a9cef34-7dbc-4234-96c2-db78d39a9675" />
 
 ## Fitur Utama
 * **Smart PDF Parsing:** Mengekstraksi teks dari dokumen CV berformat PDF secara akurat dan bersih.

@@ -12,7 +12,7 @@ ATS Resume AI Screener adalah aplikasi web berbasis *Artificial Intelligence* ya
 
 ## Fitur Utama
 * **Smart PDF Parsing:** Mengekstraksi teks dari dokumen CV berformat PDF secara akurat dan bersih.
-* **Keyword Matching:** Menganalisis kata kunci penting dalam CV dan mencocokkannya dengan kriteria deskripsi pekerjaan.(Deskripsi pekerjaan dan spesifikasi requirement bisa di copy dari job portal dan di copy disini)
+* **Keyword Matching:** Menganalisis kata kunci penting dalam CV dan mencocokkannya dengan kriteria deskripsi pekerjaan.(Deskripsi pekerjaan dan spesifikasi requirement bisa di copy dari job portal dan di paste disini)
 * **ATS Compatibility Score:** Memberikan metrik persentase kecocokan yang jelas untuk mengukur kesiapan CV.
 * **Draft AI:** Fitur cerdas yang otomatis menghasilkan teks perbaikan yang sesuai dengan kekurangan pada cv.
 * **AI Cover Letter Generator:** Fitur cerdas yang otomatis menghasilkan draf surat lamaran kerja (*cover letter*) berdasarkan analisis CV dan posisi yang dilamar.
